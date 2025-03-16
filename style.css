@@ -1,0 +1,187 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styles */
+body {
+    background: #121212;
+    color: white;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Light Mode */
+.light-theme {
+    background: rgb(255, 255, 255);
+    color: black;
+}
+
+.light-theme header {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .video {
+    background: #ffffff;
+    color: black;
+}
+
+/* Stylish Header */
+header {
+    background: #ffd92d;
+    padding: 15px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ff0000;
+    text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.932);
+    position: relative;
+}
+
+/* Dark Mode Button */
+#theme-toggle {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    border: none;
+    background: #ff5722;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background: #e64a19;
+    transform: scale(1.1) rotate(5deg);
+}
+
+.light-theme #theme-toggle {
+    background: #222;
+    color: white;
+}
+
+/* Search Bar */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#search-box {
+    width: 50%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #444;
+    border-radius: 5px;
+    background: #222;
+    color: white;
+    transition: 0.3s;
+    outline: none;
+}
+
+.light-theme #search-box {
+    background: white;
+    color: black;
+    border-color: #ccc;
+}
+
+/* Search Glow Effect */
+#search-box:hover {
+    box-shadow: 0 0 10px rgba(255, 87, 34, 0.7);
+}
+
+#search-box:focus {
+    box-shadow: 0 0 15px rgb(255, 69, 12);
+    border-color: #fc4c16;
+}
+
+/* Videos Grid (Responsive) */
+#videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Video Cards */
+.video {
+    background: #1e1e1e;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.video:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 73, 18, 0.815);
+}
+
+.video iframe {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+}
+
+/* Fix for Video Titles */
+.video h3 {
+    font-size: 14px;
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Load More Button */
+#load-more {
+    display: none;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background: hsl(253, 100%, 50%);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#load-more:hover {
+    background: #ff3c00;
+    transform: scale(1.1);
+}
+
+.light-theme #load-more {
+    background: #ff0505;
+    color: white;
+}
+
+/* ✅ Mobile Responsive Improvements */
+@media (max-width: 600px) {
+    #videos {
+        grid-template-columns: 1fr;
+        /* Ek row me ek video */
+        padding: 10px;
+    }
+
+    .video {
+        margin: 0 auto;
+        /* Center kar diya */
+        width: 90%;
+        /* Thoda chhota kar diya */
+    }
+
+    #theme-toggle {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
